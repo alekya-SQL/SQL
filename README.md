@@ -55,14 +55,6 @@ The dataset consists of daily historical stock prices with the following fields:
 
 ---
 
-## 💼 Ideal For
-
-- Data Analysts / BI Developers preparing for interviews  
-- Portfolio builders looking to showcase SQL expertise  
-- Anyone learning real-world data transformation using SQL
-
----
-
 ## 📬 Contact
 If you liked this project, feel free to fork and star the repo ⭐!
 
