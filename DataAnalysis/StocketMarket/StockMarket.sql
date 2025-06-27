@@ -16,10 +16,10 @@ WHERE volume IN
 
 --Calculate the daily price change (high - low) and find the day with the largest swing.
 
-  SELECT id,date,high - low AS HighLow
+  SELECT Top 1 id,date,high - low AS HighLow
   FROM tutorial.aapl_historical_stock_price WHERE YEAR = 2014
 ORDER BY high - low
-LIMIT 1
+
 
 --Find the average closing price for each month of each year.
 
