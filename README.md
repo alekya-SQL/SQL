@@ -1,7 +1,7 @@
 # Data Analysis
 # 📊 Stock Price Data Analysis Using SQL
 
-This project demonstrates practical SQL skills by analyzing historical stock price data. The goal is to showcase data querying, transformation, trend detection, and performance insights — ideal for building a job-ready portfolio.
+This project demonstrates practical SQL skills by analyzing historical stock price data. The goal is to showcase data querying, transformation, trend detection, and performance insights.
 
 ## 📁 Dataset Overview
 
