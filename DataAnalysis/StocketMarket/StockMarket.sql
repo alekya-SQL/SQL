@@ -35,25 +35,25 @@ ORDER BY YEAR,
 
 --Which month had the highest average trading volume?
 
-SELECT YEAR,
+SELECT TOP 1 YEAR,
        MONTH,
        avg(CLOSE)
 FROM tutorial.aapl_historical_stock_price
 GROUP BY YEAR,
          MONTH
 ORDER BY avg(CLOSE)
-LIMIT 1 
+
 
 --the top 5 months by average volume ?
 
-SELECT YEAR,
+SELECT TOP 5 YEAR,
        MONTH,
        avg(CLOSE)
 FROM tutorial.aapl_historical_stock_price
 GROUP BY YEAR,
          MONTH
 ORDER BY avg(CLOSE)
-LIMIT 5 
+
 
 --alternative solution using window functions
 WITH avg_volume_per_month AS
@@ -120,8 +120,8 @@ SELECT date,OPEN,
             CLOSE
 FROM tutorial.aapl_historical_stock_price
 WHERE CLOSE > OPEN
-ORDER BY date 📉 Volatility
-AND Performance Which YEAR was most VOLATILE (based ON average daily swing)? WITH CTE AS
+ORDER BY date 
+-- Which YEAR was most VOLATILE (based ON average daily swing)? WITH CTE AS
   (SELECT YEAR,
           AVG(high - low) AS avg_daily_swing
    FROM tutorial.aapl_historical_stock_price
