@@ -133,3 +133,28 @@ WHERE avg_daily_swing =
      FROM CTE);
 
 --Calculate month-over-month % change in average closing price.
+WITH MonthlyAvg AS (
+    SELECT
+        year AS yr,
+        month AS mn,
+        AVG(close) AS avg_close
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY YEAR, MONTH
+),
+MonthlyWithChange AS (
+    SELECT 
+        yr,
+        mn,
+        avg_close,
+        LAG(avg_close) OVER (ORDER BY yr, mn) AS prev_avg_close
+    FROM MonthlyAvg
+)
+SELECT 
+    yr,
+    mn,
+    avg_close,
+   ((avg_close - prev_avg_close) / prev_avg_close) * 100.0 AS mom_percent_change
+FROM MonthlyWithChange
+--WHERE yr = 2014
+
+
